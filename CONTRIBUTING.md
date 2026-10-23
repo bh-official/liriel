@@ -19,9 +19,10 @@ You do not need to be a programmer to contribute. Some of the most useful help i
 ## Before you start
 
 1. Read the [README](README.md) and run Liriel once with your own Claude Code (it takes a few minutes and needs no API key).
-2. Run the synthetic checks — no network, no real model:
+2. Install the dependencies and run the synthetic checks — no network, no real model:
 
    ```bash
+   pip install -r requirements.txt
    for f in tests/ontology/verify_*.py tests/verify_reply_limit.py tests/finetune/verify_capture.py; do
      case "$f" in *verify_ontology_pg.py) continue;; esac
      python "$f" > /dev/null || echo "FAIL $f"
